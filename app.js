@@ -1,16 +1,28 @@
 const main = document.querySelector("main");
+const div = document.createElement("div");
+let divList;
+let divNumber = 16;
 
-divList = [];
+function createGrid() {
+  main.style.gridTemplateColumns = `repeat(${divNumber}, 1fr)`;
+  main.style.gridTemplateRows = `repeat(${divNumber}, 1fr)`;
 
-for (i = 0; i < 16 * 16; i++) {
-  divList[i] = document.createElement("div");
-  main.appendChild(divList[i]);
+  for (i = 0; i < divNumber ** 2; i++) {
+    main.appendChild(div.cloneNode());
+  }
 }
 
-// for (i = 0; i < 16 * 16; i++) {
-//     let n =i;
-//     divList[i].addEventListener("mouseover", function(n){
-//         divList[n].style.background = "rgb(0, 253, 211)";
-//         console.log("hi");
-//     }(n))
-// }
+createGrid();
+
+divList = document.querySelectorAll("div");
+
+function changeColor(element){
+  element.addEventListener("mouseover", function(){
+    let color1 = (Math.random() * 255).toFixed(0);
+    let color2 = (Math.random() * 255).toFixed(0);
+    let color3 = (Math.random() * 255).toFixed(0);
+    this.style.background = `rgb(${color1},${color2},${color3})`;
+  })
+}
+
+divList.forEach(changeColor);
