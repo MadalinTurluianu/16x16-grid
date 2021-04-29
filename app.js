@@ -1,7 +1,7 @@
 const main = document.querySelector("main");
 const div = document.createElement("div");
 
-// -------------------------------------------------------- CREATE THE START GRID
+// --------------------------------------------------------- CREATE THE START GRID
 
 let divNumber = 16;
 
@@ -16,7 +16,7 @@ function createGrid() {
 
 createGrid();
 
-// -------------------------------------------------------- MAKING THE DIVS TO CHANGE COLOR
+// --------------------------------------------------------- MAKING THE DIVS TO CHANGE COLOR
 
 let divList = document.querySelectorAll("div"); // We have to define divList after createGrid()
 
@@ -31,7 +31,7 @@ function changeColor(element) {
 
 divList.forEach(changeColor);
 
-// -------------------------------------------------------- RESET BTN FUNCTIONALITY
+// --------------------------------------------------------- RESET BTN FUNCTIONALITY
 
 const resetBtn = document.querySelector(".reset");
 
